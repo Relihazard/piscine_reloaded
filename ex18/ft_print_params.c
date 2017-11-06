@@ -1,21 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcmp.c                                        :+:      :+:    :+:   */
+/*   ft_print_params.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: agrossma <agrossma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/06 15:34:15 by agrossma          #+#    #+#             */
-/*   Updated: 2017/11/06 15:42:24 by agrossma         ###   ########.fr       */
+/*   Created: 2017/11/06 15:43:46 by agrossma          #+#    #+#             */
+/*   Updated: 2017/11/06 15:50:56 by agrossma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_strcmp(char *s1, char *s2)
+void	ft_putchar(char c);
+
+int		main(int argc, char **argv)
 {
-	while (*s1 && (*s1 == *s2))
+	int		i;
+	int		j;
+
+	i = 1;
+	while (i < argc)
 	{
-		s1++;
-		s2++;
+		j = 0;
+		while (argv[i][j])
+			ft_putchar(argv[i][j++]);
+		i++;
 	}
-	return (*(unsigned char *)s1 - *(unsigned char *)s2);
+	return (0);
 }
