@@ -6,7 +6,7 @@
 /*   By: agrossma <agrossma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/06 14:07:17 by agrossma          #+#    #+#             */
-/*   Updated: 2017/11/07 14:28:17 by agrossma         ###   ########.fr       */
+/*   Updated: 2017/11/07 15:10:46 by agrossma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,8 @@ int		ft_iterative_factorial(int nb)
 	else
 	{
 		result = 1;
-		while (nb-- != 0)
-			result = result * nb;
+		while (nb != 0)
+			result = result * nb--;
 	}
 	return (result);
 }

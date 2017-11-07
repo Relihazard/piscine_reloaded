@@ -6,7 +6,7 @@
 #    By: agrossma <agrossma@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/11/06 16:32:46 by agrossma          #+#    #+#              #
-#    Updated: 2017/11/07 14:24:06 by agrossma         ###   ########.fr        #
+#    Updated: 2017/11/07 15:25:27 by agrossma         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,7 +24,7 @@ SRCS			:= \
 	ft_strcmp.c \
 	ft_strlen.c \
 	ft_swap.c
-OBJS			:= $(SRCS:.c=.O)
+OBJS			:= $(SRCS:.c=.o)
 
 .PHONY: $(NAME) all clean fclean re
 

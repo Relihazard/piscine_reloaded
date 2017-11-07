@@ -6,7 +6,7 @@
 /*   By: agrossma <agrossma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/06 13:50:07 by agrossma          #+#    #+#             */
-/*   Updated: 2017/11/06 13:51:11 by agrossma         ###   ########.fr       */
+/*   Updated: 2017/11/07 15:08:57 by agrossma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,6 @@ void	ft_print_alphabet(void)
 	char	c;
 
 	c = 'a';
-	while (c++ <= 'z')
-		ft_putchar(c);
+	while (c <= 'z')
+		ft_putchar(c++);
 }

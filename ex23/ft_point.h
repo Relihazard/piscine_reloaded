@@ -6,7 +6,7 @@
 /*   By: agrossma <agrossma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/06 16:29:15 by agrossma          #+#    #+#             */
-/*   Updated: 2017/11/06 16:32:14 by agrossma         ###   ########.fr       */
+/*   Updated: 2017/11/07 15:24:54 by agrossma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,8 @@
 
 typedef struct	s_point
 {
-	int		*x;
-	int		*y;
+	int		x;
+	int		y;
 }				t_point;
 
 #endif

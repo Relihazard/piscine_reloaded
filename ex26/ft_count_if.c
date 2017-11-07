@@ -6,7 +6,7 @@
 /*   By: agrossma <agrossma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/07 14:29:49 by agrossma          #+#    #+#             */
-/*   Updated: 2017/11/07 14:31:41 by agrossma         ###   ########.fr       */
+/*   Updated: 2017/11/07 15:06:17 by agrossma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,5 +20,5 @@ int		ft_count_if(char **tab, int (*f)(char *))
 		if (f(*tab++) == 1)
 			result++;
 	}
-	return result;
+	return (result);
 }

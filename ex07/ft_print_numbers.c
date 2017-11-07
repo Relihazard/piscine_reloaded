@@ -6,7 +6,7 @@
 /*   By: agrossma <agrossma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/06 13:51:38 by agrossma          #+#    #+#             */
-/*   Updated: 2017/11/06 13:52:42 by agrossma         ###   ########.fr       */
+/*   Updated: 2017/11/07 15:09:11 by agrossma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,6 @@ void	ft_print_numbers(void)
 	char	c;
 
 	c = '1';
-	while (c++ <= '9')
-		ft_putchar(c);
+	while (c <= '9')
+		ft_putchar(c++);
 }
