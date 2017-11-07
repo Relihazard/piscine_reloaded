@@ -6,7 +6,7 @@
 /*   By: agrossma <agrossma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/06 15:51:42 by agrossma          #+#    #+#             */
-/*   Updated: 2017/11/07 15:42:59 by agrossma         ###   ########.fr       */
+/*   Updated: 2017/11/07 16:20:05 by agrossma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@ void	ft_putchar(char c);
 
 int		ft_strcmp(char *s1, char *s2)
 {
-	while (*s1 && (*s1 == *s2))
+	while (*s1 != '\0' && (*s1 == *s2))
 	{
 		s1++;
 		s2++;
@@ -22,23 +22,28 @@ int		ft_strcmp(char *s1, char *s2)
 	return (*(unsigned char *)s1 - *(unsigned char *)s2);
 }
 
-char	**ft_sort_params(int argc, char **argv)
+void	ft_swap_argv(int argc, char **argv)
 {
 	int		i;
-	char	*tmp;
+	int		j;
+	char	*temp;
 
 	i = 1;
-	while (i + 1 < argc)
+	while (i < argc - 1)
 	{
-		if (ft_strcmp(argv[i], argv[i + 1]) > 0)
+		j = i + 1;
+		while (j < argc)
 		{
-			tmp = argv[i];
-			argv[i] = argv[i + 1];
-			argv[i + 1] = tmp;
+			if (ft_strcmp(argv[i], argv[j]) > 0)
+			{
+				temp = argv[i];
+				argv[i] = argv[j];
+				argv[j] = temp;
+			}
+			j++;
 		}
 		i++;
 	}
-	return (argv);
 }
 
 int		main(int argc, char **argv)
@@ -47,16 +52,17 @@ int		main(int argc, char **argv)
 	int		j;
 
 	i = 1;
-	argv = ft_sort_params(argc, argv);
+	ft_swap_argv(argc, argv);
 	while (i < argc)
 	{
 		j = 0;
 		while (argv[i][j])
 		{
-			ft_putchar(argv[i][j++]);
+			ft_putchar(argv[i][j]);
+			j++;
 		}
-		ft_putchar('\n');
 		i++;
+		ft_putchar('\n');
 	}
 	return (0);
 }
