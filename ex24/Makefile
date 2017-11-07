@@ -6,7 +6,7 @@
 #    By: agrossma <agrossma@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/11/06 16:32:46 by agrossma          #+#    #+#              #
-#    Updated: 2017/11/07 15:25:27 by agrossma         ###   ########.fr        #
+#    Updated: 2017/11/07 15:45:14 by agrossma         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,8 +16,8 @@ CCFLAGS			:= -Wall -Wextra -Werror
 AR				:= ar
 ARFLAGS			:= rc
 RANLIB			:= ranlib
-SRCS_DIR		:= srcs/
-INCLUDES-DIR	:= includes/
+SRCS_DIR		:= srcs
+INCLUDES_DIR	:= includes
 SRCS			:= \
 	ft_putchar.c \
 	ft_putstr.c \
@@ -35,7 +35,7 @@ all: $(OBJS)
 	$(RANLIB) $(NAME).a
 
 %.o: $(SRCS_DIR)/%.c
-	$(CC) $(CCFLAGS) -I$(INCLUDES_DIR) -c $< -o $@
+	$(CC) $(CCFLAGS) -I$(INCLUDES_DIR)/ -c $< -o $@
 
 clean:
 	rm -rf $(OBJS)

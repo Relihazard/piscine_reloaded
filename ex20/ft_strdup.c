@@ -6,7 +6,7 @@
 /*   By: agrossma <agrossma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/06 16:04:45 by agrossma          #+#    #+#             */
-/*   Updated: 2017/11/07 15:22:20 by agrossma         ###   ########.fr       */
+/*   Updated: 2017/11/07 15:47:02 by agrossma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,14 +15,16 @@
 char	*ft_strdup(char *src)
 {
 	char	*copy;
+	char	*str;
 	int		len;
 
 	len = 0;
 	while (src[len])
 		len++;
 	copy = (char *)malloc(sizeof(char) * (len + 1));
+	str = copy;
 	while (*src)
-		*copy++ = *src++;
-	copy[len] = '\0';
-	return (copy);
+		*str++ = *src++;
+	*str = '\0';
+	return (str);
 }

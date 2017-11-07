@@ -6,7 +6,7 @@
 /*   By: agrossma <agrossma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/06 15:51:42 by agrossma          #+#    #+#             */
-/*   Updated: 2017/11/07 15:13:08 by agrossma         ###   ########.fr       */
+/*   Updated: 2017/11/07 15:42:59 by agrossma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,8 +54,8 @@ int		main(int argc, char **argv)
 		while (argv[i][j])
 		{
 			ft_putchar(argv[i][j++]);
-			ft_putchar('\n');
 		}
+		ft_putchar('\n');
 		i++;
 	}
 	return (0);
