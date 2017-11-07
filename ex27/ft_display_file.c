@@ -1,21 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_recursive_factorial.c                           :+:      :+:    :+:   */
+/*   ft_display_file.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: agrossma <agrossma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/06 14:19:39 by agrossma          #+#    #+#             */
-/*   Updated: 2017/11/07 14:28:29 by agrossma         ###   ########.fr       */
+/*   Created: 2017/11/07 14:47:23 by agrossma          #+#    #+#             */
+/*   Updated: 2017/11/07 14:59:47 by agrossma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_recursive_factorial(int nb)
+#include "ft_display_file.h"
+
+void	ft_display_file(char *path)
 {
-	if (nb < 0 || nb >= 13)
-		return (0);
-	else if (nb == 0)
-		return (1);
-	else
-		return (nb * ft_recursive_factorial(nb - 1));
+	int		fd;
+	int		ret;
+	char	buffer[BUFFER_SIZE + 1];
+
+	fd = open(path, O_RDONLY);
+	while ((ret = read(fd, buffer, BUFFER_SIZE)) != 0)
+	{
+		ft_putstr(buffer);
+	}
+	close(fd);
 }

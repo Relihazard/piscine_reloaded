@@ -5,42 +5,35 @@
 #                                                     +:+ +:+         +:+      #
 #    By: agrossma <agrossma@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2017/11/06 16:32:46 by agrossma          #+#    #+#              #
-#    Updated: 2017/11/07 14:24:06 by agrossma         ###   ########.fr        #
+#    Created: 2017/11/07 14:33:40 by agrossma          #+#    #+#              #
+#    Updated: 2017/11/07 15:01:02 by agrossma         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME			:= libft
-CC				:= gcc
-CCFLAGS			:= -Wall -Wextra -Werror
-AR				:= ar
-ARFLAGS			:= rc
-RANLIB			:= ranlib
-SRCS_DIR		:= srcs/
-INCLUDES-DIR	:= includes/
-SRCS			:= \
+NAME	:= ft_display_file
+CC		:= gcc
+CCFLAGS	:= -Wall -Wextra -Werror
+SRCS	:=\
+	main.c \
 	ft_putchar.c \
 	ft_putstr.c \
-	ft_strcmp.c \
-	ft_strlen.c \
-	ft_swap.c
-OBJS			:= $(SRCS:.c=.O)
+	ft_display_file.c
+OBJS	:= $(SRCS:.c=.o)
 
 .PHONY: $(NAME) all clean fclean re
 
 $(NAME): all
 
 all: $(OBJS)
-	$(AR) $(ARFLAGS) $(NAME).a $(OBJS)
-	$(RANLIB) $(NAME).a
+	$(CC) $(CCFLAGS) $(OBJS) -o $(NAME)
 
-%.o: $(SRCS_DIR)/%.c
-	$(CC) $(CCFLAGS) -I$(INCLUDES_DIR) -c $< -o $@
+%.o: %.c
+	$(CC) $(CCFLAGS) -c $< -o $@
 
 clean:
-	rm -rf $(OBJS)
+	rm -f $(OBJS)
 
 fclean: clean
-	rm -rf $(NAME).a
+	rm -f $(NAME)
 
 re: fclean all

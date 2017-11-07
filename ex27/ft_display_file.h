@@ -1,21 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_recursive_factorial.c                           :+:      :+:    :+:   */
+/*   ft_display_file.h                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: agrossma <agrossma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/06 14:19:39 by agrossma          #+#    #+#             */
-/*   Updated: 2017/11/07 14:28:29 by agrossma         ###   ########.fr       */
+/*   Created: 2017/11/07 14:39:41 by agrossma          #+#    #+#             */
+/*   Updated: 2017/11/07 14:55:42 by agrossma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_recursive_factorial(int nb)
-{
-	if (nb < 0 || nb >= 13)
-		return (0);
-	else if (nb == 0)
-		return (1);
-	else
-		return (nb * ft_recursive_factorial(nb - 1));
-}
+#ifndef FT_DISPLAY_FILE_H
+# define FT_DISPLAY_FILE_H
+
+# include <unistd.h>
+# include <fcntl.h>
+# include <sys/types.h>
+# include <sys/stat.h>
+
+# define BUFFER_SIZE 4096
+
+void	ft_putchar(char c);
+void	ft_putstr(char *str);
+void	ft_display_file(char *path);
+
+#endif
